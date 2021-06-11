@@ -1,0 +1,32 @@
+% Palavras chave
+\newcommand{\palavraschave}[1]{ %
+	\vspace{\onelineskip} 
+	\noindent \textbf{Palavras-chave:} #1%
+	\hypersetup{%
+		pdfborder = {0 0 0}
+	}
+}
+
+%Keywords
+\newcommand{\keywords}[1]{ %
+	\vspace{\onelineskip} 
+	\noindent \textbf{Keywords:} #1%
+}
+
+% Resumo
+\newcommand{\imprimirresumo}[1]{ %
+	\begin{resumo} %
+		\begin{SingleSpace}
+		\input{#1} %
+		\end{SingleSpace}
+	\end{resumo} %
+}
+
+% Abstract
+\newcommand{\imprimirabstract}[1]{ %
+	\begin{resumo}[Abstract] %
+		\begin{SingleSpace}
+		\input{#1} %
+		\end{SingleSpace}
+	\end{resumo} %
+}

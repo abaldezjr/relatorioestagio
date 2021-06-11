@@ -1,0 +1,25 @@
+% CAPA DO TCC
+\newcommand{\imprimircapatcc}[1]{%
+	\begin{capa}
+		\center % Todos os elementos da capa devem esta centralizado
+        \vspace{0.1cm}
+		\begin{bfseries}\MakeUppercase{\imprimiries}\end{bfseries} \\
+		\begin{bfseries}\MakeUppercase{\imprimircentro}\end{bfseries}\par
+		\vspace{5cm}\par
+		%\MakeUppercase{Curso de #1 em \imprimirgraduacaoem} \\
+		\vspace{\onelineskip}
+		\MakeUppercase{\imprimirautor}\par
+		\vspace{3cm}\par
+		\begin{bfseries}\MakeUppercase{\imprimirtitulo}\end{bfseries}
+		\vfill
+		\vspace{5cm}
+		\begin{bfseries}\normalsize\MakeUppercase{\imprimirlocal}\end{bfseries}\par	
+		\begin{bfseries}\normalsize{\imprimirdata}\end{bfseries}
+		\pagebreak
+	\end{capa}	
+}
+
+\renewcommand{\imprimircapa}{%
+	\setcounter{page}{0}
+    \imprimircapatcc{Graduação}	 %
+}

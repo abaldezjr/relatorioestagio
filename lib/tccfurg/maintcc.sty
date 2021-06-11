@@ -1,0 +1,254 @@
+\input{elementos-pos-textuais/glossaries.tex}
+
+%importando arquivos
+\input{lib/tccfurg/metadados.sty}
+\input{lib/tccfurg/codigofonte.sty}
+\input{lib/tccfurg/variaveis.sty}
+\input{lib/tccfurg/capa.sty}
+\input{lib/tccfurg/folhaderosto.sty}
+\input{lib/tccfurg/fichacatalografica.sty}
+\input{lib/tccfurg/folhadeaprovacao.sty}
+\input{lib/tccfurg/resumo-abstract.sty}
+\input{lib/tccfurg/listadeilustracoes.sty}
+\input{lib/tccfurg/listadetabelas.sty}
+\input{lib/tccfurg/listadeequacoes.sty}
+\input{lib/tccfurg/listadeabreviaturas.sty}
+\input{lib/tccfurg/listadesimbolos.sty}
+\input{lib/tccfurg/referencias.sty}
+\input{lib/tccfurg/glossario.sty}
+\input{lib/tccfurg/apendices.sty}
+
+%margens
+\setlrmarginsandblock{3cm}{2cm}{*} % externa / interna
+\setulmarginsandblock{3cm}{2cm}{*} % superior / inferior
+
+%espaçamento entre linhas
+\renewcommand{\baselinestretch}{1.5} 
+
+% Espacamento chapters:
+\setlength{\beforechapskip}{-\onelineskip} %com 0 nao funcionou
+\setlength{\afterchapskip}{\onelineskip} % antes do titulo de capitulo
+
+% Espacamento section
+\setbeforesecskip{18pt}
+\setaftersecskip{\onelineskip}
+
+% Espacamento subsection
+\setbeforesubsecskip{\onelineskip}
+\setaftersubsecskip{\onelineskip}
+
+% Espacamento subsubsection
+\setbeforesubsubsecskip{\onelineskip}
+\setaftersubsubsecskip{\onelineskip}
+
+% Espacamento subsubsubsection
+\setbeforeparaskip{\onelineskip}
+\setafterparaskip{\onelineskip}
+
+% Distancia do parágrafo
+\setlength{\parindent}{1.25cm}
+
+% Estilo do chapter 1
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+
+% Estilo da section 1.1
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1.1
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1.1
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+
+% Margem da legenda da figura e da tabela
+\captionsetup{
+	justification=centering,% Centraliza o caption
+	skip=0pt                %Retira o espaco entre a figura/tabela e o caption
+}
+
+% Remove o ponto final de cada entrada da lista de abreviaturas e siglas
+\renewcommand{\glspostdescription}{}
+
+%criação de comandos para referencias, indice, sumario e lista de simbolos
+\addto\captionsbrazil{
+	\renewcommand{\bibname}{REFER\^ENCIAS}
+	\renewcommand{\indexname}{\'INDICE}
+	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
+	\renewcommand{\listadesimbolosname}{Lista de Símbolos}
+}
+
+%não sei o que faz
+% Distance between floats on the top or the bottom and the text;
+\setlength{\textfloatsep}{18pt plus 2pt minus 2pt}
+
+% Distance between floats inserted inside the page text (using h) and the text proper.
+\setlength{\intextsep}{18pt plus 2pt minus 2pt}
+
+\newcommand{\Caption}[1]{ %
+	\begin{Spacing}{1.5} %
+       	\caption{#1} %
+   	\end{Spacing} %
+}
+%----------
+
+% Fonte da imagem e tabela
+\newcommand{\Fonte}[2][\fontename]{ %
+	\vspace{8pt}
+ 	\fonte[#1]{#2}
+ 	\vspace{-5pt}
+}
+
+% Cria o comando para fazer notas e anotacoes na figura e na tabela
+\newcommand{\Nota}[2][\notaname]{\Fonte[#1]{#2}} 
+
+%Remove as bordas do hyperlinks.
+\newcommand{\removerbordasdohyperlink}[1]{%
+	\ifthenelse{\equal{#1}{sim}}{%
+  		\hypersetup{%
+  		    pdfborder = {0 0 0}
+  		}
+    }
+}
+
+% Altera a cor dos hyperlinks do documento
+\newcommand{\cordohyperlink}[1]{%
+	\ifthenelse{\equal{#1}{sim}}{%
+		\hypersetup{%
+			colorlinks = true,
+			linkcolor = blue
+		}
+	}
+}
+
+% Ambiente para alineas e e subalineas (incisos) com ponto
+\newlist{alineascomponto}{itemize}{2}
+\setlist[alineascomponto,1]{label={$\bullet$},topsep=0pt,itemsep=0pt,leftmargin=\parindent+\labelwidth-\labelsep}%
+\setlist[alineascomponto,2]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}
+\newlist{subalineascomponto}{enumerate}{1}
+\setlist[subalineascomponto,1]{label={$\circ$},topsep=0pt,itemsep=0pt,leftmargin=*}%
+% ---
+
+% Ambiente para alineas e e subalineas (incisos) com numeros
+\newlist{alineascomnumero}{enumerate}{2}
+\setlist[alineascomnumero,1]{label={$\arabic*$.},topsep=0pt,itemsep=0pt,leftmargin=\parindent+\labelwidth-\labelsep}%
+\setlist[alineascomnumero,2]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}
+\newlist{subalineascomnumero}{enumerate}{1}
+\setlist[subalineascomnumero,1]{label={$\arabic*$.},topsep=0pt,itemsep=0pt,leftmargin=*}%
+% ---
+
+% Verifica se uma determinada macro não está vazia
+\newcommand{\ifnotempty}[3]{\ifthenelse{\not\equal{#1}{}}{#2}{#3}}
+
+% Verifica se uma determinada macro está vazia
+\newcommand{\ifempty}[3]{\ifthenelse{\equal{#1}{}}{#2}{#3}}
+
+
+% Correcao do problema de espacamento entre as palavras
+\renewcommand{\printchapternum}{%
+	\tocprintchapter
+	\setboolean{abntex@innonumchapter}{false}
+	\chapnumfont%
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+		\hspace{-0.3cm} %
+	}{}%
+	\space\thechapter\space%
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+		\tocinnonumchapter
+		~\textendash~%
+	}{} % else
+}
+
+% Remove uppercase do apendice e anexos
+\makeatletter
+\ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+	\settocpreprocessor{chapter}{%
+		\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+			\let\tempf@rtoc\f@rtoc%
+			\def\f@rtoc{%
+				\texorpdfstring{\tempf@rtoc}{\tempf@rtoc}}%
+		}{
+		\let\tempf@rtoc\f@rtoc%
+		\def\f@rtoc{%
+			\texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+	}
+}
+\settocpreprocessor{part}{%
+	\let\tempf@rtoc\f@rtoc%
+	\def\f@rtoc{%
+		\texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+}
+}{}
+\makeatother
+
+% Número das Páginas
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+
+% Cabecalho do inicio do capitulo
+\makepagestyle{abntchapfirst}
+\makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
+
+\newcommand{\imprimirindice}{ %
+	\printindex
+}
+
+% Configuração do Sumário
+\renewcommand{\contentsname}{}
+
+\newcommand{\imprimirsumario}{ %
+	\pdfbookmark[0]{Sumário}{toc}
+	\tableofcontents*
+	\cleardoublepage
+}
+
+% Modifica o espaçamento no sumário
+% Nao ha espacos
+\setlength{\cftbeforeparagraphskip}{0pt}
+\setlength{\cftbeforesubsectionskip}{0pt}
+\setlength{\cftbeforesectionskip}{0pt}
+\setlength{\cftbeforesubsubsectionskip}{0pt}
+\setlength{\cftbeforechapterskip}{0pt}
+
+%\renewcommand\cftchapterfont{\normalsize}
+\renewcommand\cftsectionfont{\normalsize\normalfont}
+\renewcommand\cftsubsectionfont{\normalsize}
+\renewcommand\cftsubsubsectionfont{\normalsize\normalfont}
+% Altera a fonte da seção quinária
+\renewcommand*{\cftparagraphfont}{\normalsize\normalfont\itshape}
+
+% Páginas do sumário não podem ser negrito.
+\renewcommand\cftchapterpagefont{\normalfont}
+\renewcommand\cftsectionpagefont{\normalfont}
+\renewcommand\cftsubsectionpagefont{\normalfont}
+% Altera a fonte da seção quinária
+\renewcommand\cftparagraphpagefont{\normalfont}
+
+% Secao Secundaria (Section): Caixa alta, Não Negrito, tamanho 12
+\makeatletter
+\let\oldcontentsline\contentsline
+\def\contentsline#1#2{%
+	\expandafter\ifx\csname l@#1\endcsname\l@section %
+	\expandafter\@firstoftwo %
+	\else %
+	\expandafter\@secondoftwo %
+	\fi %
+	{%
+		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+	}{%
+	\oldcontentsline{#1}{#2}%
+}%
+}
+\makeatother
+
+\newcommand{\expnumber}[2]{
+	{#1} \cdot \mathrm{10}{#2}
+}

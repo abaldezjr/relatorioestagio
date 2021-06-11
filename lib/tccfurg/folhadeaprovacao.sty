@@ -1,0 +1,43 @@
+%Folha de Aprovação
+\newcommand{\imprimirfolhadeaprovacaotcc}{
+    \begin{folhadeaprovacao}
+        \setlength{\ABNTEXsignwidth}{12cm} % Define o comprimento da linha das assinaturas na Folha de Aprovacao
+        \setlength{\ABNTEXsignthickness}{1pt} % Largura da linha da assinatura
+        \setlength{\ABNTEXsignskip}{\onelineskip} % Espaço entre uma assintura e outra
+        \begin{center}
+            \MakeUppercase{\imprimirautor}\par
+            \vspace{\onelineskip}
+            \vspace{\onelineskip}
+            \vspace{\onelineskip}
+            \MakeUppercase{\imprimirtitulo}
+        \end{center}
+        \vspace{\onelineskip}
+        \vspace{\onelineskip}
+        \vspace{\onelineskip}
+        \begin{flushright}
+        \begin{minipage}{10.5cm}
+            \begin{SingleSpace}
+                \imprimirpreambulo%
+            \end{SingleSpace}		
+        \end{minipage}
+        \end{flushright}
+        \vspace{\onelineskip}
+        \vspace{\onelineskip}
+        \noindent Aprovada em: \imprimirdataaprovacao
+        \vspace{\onelineskip}
+        \vspace{\onelineskip}
+        \begin{center}
+            BANCA EXAMINADORA
+        \end{center}
+            \vspace{\onelineskip}
+
+        \assinatura{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadorcentro \\  \imprimirorientadories}
+        %\assinatura{\imprimircoorientador\ \artigocoorientadorcomparenteses \\ \imprimircoorientadorcentro\\ \imprimircoorientadories}
+        \assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoiscentro \\ \imprimirmembrodabancadoisies}
+        \pagebreak
+    \end{folhadeaprovacao}
+}
+
+\newcommand{\imprimirfolhadeaprovacao}{
+    \imprimirfolhadeaprovacaotcc	 %
+}

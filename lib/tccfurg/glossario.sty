@@ -1,0 +1,20 @@
+% Glossário
+\setlist{nosep}
+\newglossarystyle{glossario-uece}{%
+	\renewenvironment{theglossary}%
+	{\vspace{-0.3cm}\begin{description}[leftmargin=0cm]\itemsep -1pt}{\end{description}}%
+	\renewcommand*{\glossaryheader}{}%
+	\renewcommand*{\glsgroupheading}[1]{%
+		\vspace{0cm}\item[{\glsgetgrouptitle{##1}}] \vspace{\onelineskip}		
+	}
+	\renewcommand*{\glsgroupskip}{}%
+	\renewcommand*{\glossaryentryfield}[5]{%
+		\item[\glstarget{##1}{##2}:] ##3.%
+	}%
+}
+
+\newcommand{\imprimirglossario}{ %
+    \setglossarystyle{glossario-uece} %	
+	\printglossary[title=GLOSSÁRIO,toctitle=GLOSSÁRIO] %
+	\addcontentsline{toc}{chapter}{GLOSSÁRIO}
+}

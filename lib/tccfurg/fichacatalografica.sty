@@ -1,0 +1,42 @@
+%ficha catalografica
+\newcommand{\imprimirfichacatalograficapdf}[1]{
+	\includepdf[pages=1]{#1} %
+}
+
+\newcommand{\imprimirfichacatalografica}[1]{
+	\newpage
+	\begin{fichacatalografica}
+		\vspace*{13cm} % Posição vertical
+			\begin{center}
+				\framebox[125mm]{%
+				\begin{minipage}[t]{20mm}
+					\begin{flushleft}
+						370\\
+						S2373d
+					\end{flushleft}
+				\end{minipage}%
+					\begin{minipage}[t]{100mm}%
+						\vspace*{0.2ex}
+						\setlength{\parindent}{1.5em}%
+						\setlength{\parskip}{1.3ex}%
+						\noindent Marques Baldez Junior, Alexandre\par
+						Sistema de Coordenadas para Posicionamento de Instrumentos de Medição em um Túnel de Vento\ / Alexandre Marques Baldez Junior.\ -- Rio Grande, 2021.\\%
+						\pageref{LastPage}f.: il.\\%
+						Trabalho de conclusão de curso (graduação) -- Universidade Federal do Rio Grande. Escola de Engenharia. Rio grande, 2021.\\%
+						Orientador Gustavo Da Cunha Dias; Co-orientador: Letieri Rodrigues de Ávila\\%
+						1.~Mesa cartesiana 2.~Túnel de vento 3.~Tubo de Pitot\\%
+						I.~Da~Cunha~Dias,~Gustavo II.~Rodrigues~de~Ávila,~Letieri III.~Titulo%
+						\vspace{0.4ex}
+					\end{minipage}%
+				}
+			\end{center}
+			\vfill\mbox{}
+	\begin{flushleft}
+	UNIVERSIDADE FEDERAL DO RIO GRANDE\\
+	Reitor: Danilo Giroldo\\
+	Pró-Reitor de Graduação: Sibele da Rocha Martins\\
+	Coordenador do Curso: Márcio Ulguim Oliveira\\
+	\end{flushleft}
+	\end{fichacatalografica}
+	\pagebreak
+}

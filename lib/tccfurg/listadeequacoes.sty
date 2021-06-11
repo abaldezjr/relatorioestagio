@@ -1,0 +1,15 @@
+\newcommand{\listequationsname}{Lista de Equações}
+\newlistof{listofequations}{equ}{\listequationsname}
+\newcommand{\myequation}[1]{%
+	\addcontentsline{equ}{equation}{\numberline{\theequation}#1}\par
+}
+
+\makeatletter
+\let\l@equation\l@figure
+\makeatother
+
+\newcommand{\imprimirlistadeequacoes}{
+	\begin{KeepFromToc} %
+		\listofequations\pagebreak %
+	\end{KeepFromToc} %
+}

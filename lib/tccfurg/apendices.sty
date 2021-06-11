@@ -1,0 +1,47 @@
+% Apendices
+
+% Define o titulo no sumario do Apendice para nao negrito
+\newcommand{\apendice}[1]{\chapter{\normalfont{#1}}}
+
+% O nome APÊNDICES deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
+\newcommand{\imprimirpaginaapendices}{ %
+	\newpage %
+	\addcontentsline{toc}{chapter}{AP\^ENDICES} %
+	\begin{vplace}[0.7] %
+		\centering\textbf{AP\^ENDICES} %
+	\end{vplace} %
+	\clearpage
+}
+
+% Altera a fonte da letra titulo do apendice para nao negrito
+\renewcommand{\chaptitlefont}{ %
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{ %
+		\normalfont\normalsize %
+	}{%
+		\ABNTEXchapterfont\ABNTEXchapterfontsize %
+	}%
+}
+
+% Retira o negrito do apêndice e o coloca alinhado a esquerda
+\renewcommand{\printchaptertitle}[1]{%
+	\chaptitlefont%
+	\ifthenelse{\boolean{abntex@innonumchapter}}{\centering\ABNTEXchapterupperifneeded{#1}}{%
+		\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+			\normalfont
+			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+			\hspace{-0.3cm} %
+			#1 %	\ABNTEXchapterupperifneeded{#1}%
+		}{%
+			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+			\parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{#1}}
+		}%
+	}    
+}
+
+\newcommand{\imprimirapendices}{ %
+	\imprimirpaginaapendices
+	\apendices %
+	% Retira o negrito da palavra "Apendice"
+	\PRIVATEapendiceconfig{\normalfont\apendicename}{\normalfont\apendicesname} %
+	
+}

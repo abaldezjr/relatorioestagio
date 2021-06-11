@@ -1,0 +1,46 @@
+\documentclass[        
+    a4paper,          % Tamanho da folha A4
+    12pt,             % Tamanho da fonte 12pt
+    chapter=TITLE,    % Todos os capitulos devem ter caixa alta
+    section=TITLE,    % Todas as secoes devem ter caixa alta
+    oneside,          % Usada para impressao em apenas uma face do papel
+    english,          % Hifenizacoes em ingles
+    spanish,          % Hifenizacoes em espanhol
+    brazil            % Ultimo idioma eh o idioma padrão do documento
+]{abntex2}
+
+\input{lib/preambulo}
+\input{info}
+
+%\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+%\apptocmd{\thebibliography}{\raggedright}{}{}
+
+\begin{document}
+
+    %PRETEXTUAL
+    \imprimircapa
+    \imprimirfolhaderosto
+    \imprimirfolhadeaprovacao
+    %\imprimirresumo{elementos-pre-textuais/resumo}
+    %\imprimirabstract{elementos-pre-textuais/abstract}
+    \imprimirlistadeilustracoes
+    \imprimirlistadetabelas
+    \imprimirlistadeequacoes
+    \imprimirlistadeabreviaturasesiglas	
+    \imprimirlistadesimbolos{elementos-pre-textuais/lista-de-simbolos}   
+    \imprimirsumario
+
+    %TEXTUAL
+    \textual
+    \input{elementos-textuais/introducao}
+    \input{elementos-textuais/empresa}
+    \input{elementos-textuais/desenvolvimento}
+    \input{elementos-textuais/teoriapratica}
+    \input{elementos-textuais/autoavaliacao}
+    \input{elementos-textuais/conclusao}
+
+    %POSTEXTUAL
+    \imprimirreferencias{elementos-pos-textuais/referencias}
+    %\imprimirglossario
+    %\imprimirapendices
+\end{document}
