@@ -1,4 +1,8 @@
 %Variáveis
+\newcommand{\matricula}{\def \@matricula}
+\newcommand{\localdoestagio}{\def \@localdoestagio}
+\newcommand{\datainicio}{\def \@datainicio}
+\newcommand{\datafim}{\def \@datafim}
 \newcommand{\ies}{\def \@ies}
 \newcommand{\iessigla}{\def \@iessigla}
 \newcommand{\centro}{\def \@centro}
@@ -19,8 +23,13 @@
 \newcommand{\orientadorcentro}{\def \@orientadorcentro}
 \newcommand{\coorientadories}{\def \@coorientadories}
 \newcommand{\coorientadorcentro}{\def \@coorientadorcentro}
+\newcommand{\supervisor}{\def \@supervisor}
 
 %Imprimir as Variáveis
+\newcommand{\imprimirmatricula}{\@matricula}
+\newcommand{\imprimirlocaldoestagio}{\@localdoestagio}
+\newcommand{\imprimirdatainicio}{\@datainicio}
+\newcommand{\imprimirdatafim}{\@datafim}
 \newcommand{\imprimiries}{\@ies}
 \newcommand{\imprimiriessigla}{\@iessigla}
 \newcommand{\imprimircentro}{\@centro}
@@ -42,6 +51,7 @@
 \newcommand{\imprimirorientadorcentro}{\@orientadorcentro}
 \newcommand{\imprimircoorientadories}{\@coorientadories}
 \newcommand{\imprimircoorientadorcentro}{\@coorientadorcentro}
+\newcommand{\imprimirsupervisor}{\@supervisor}
 
 \newcommand{\artigoorientador}{ %
 	\unskip Orientador\ignorespaces%
@@ -64,6 +74,10 @@ Relatório final apresentado à \imprimiries~como requisito para aprovação da 
 }
 
 %Valor de Padrão 
+\matricula{}
+\localdoestagio{}
+\datainicio{}
+\datafim{}
 \ies{Universidade Federal do Rio Grande}
 \iessigla{FURG}
 \centro{}
@@ -76,6 +90,7 @@ Relatório final apresentado à \imprimiries~como requisito para aprovação da 
 \local{}
 \dataaprovacao{}
 \orientador{}
+\supervisor{}
 \orientadories{}
 \orientadorcentro{}
 \coorientador{}

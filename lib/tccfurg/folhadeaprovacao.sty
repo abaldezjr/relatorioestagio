@@ -5,12 +5,14 @@
         \setlength{\ABNTEXsignthickness}{1pt} % Largura da linha da assinatura
         \setlength{\ABNTEXsignskip}{\onelineskip} % Espaço entre uma assintura e outra
         \begin{center}
-            \MakeUppercase{\imprimirautor}\par
-            \vspace{\onelineskip}
-            \vspace{\onelineskip}
-            \vspace{\onelineskip}
-            \MakeUppercase{\imprimirtitulo}
+            \MakeUppercase{\imprimirtitulo}\par
         \end{center}
+        \vspace{\onelineskip}
+            \textbf{Nome do estudante:}~\MakeUppercase{\imprimirautor}\\
+            \textbf{Local do estágio:}~\MakeUppercase{\imprimirlocaldoestagio}\\
+            \textbf{Periodo:}~\imprimirdatainicio~a~\imprimirdatafim\\
+            \textbf{Orientador:}~\imprimirorientador\\
+            \textbf{Supervisor:}~NOME DO SUPERVISOR\\
         \vspace{\onelineskip}
         \vspace{\onelineskip}
         \vspace{\onelineskip}
@@ -26,14 +28,10 @@
         \noindent Aprovada em: \imprimirdataaprovacao
         \vspace{\onelineskip}
         \vspace{\onelineskip}
-        \begin{center}
-            BANCA EXAMINADORA
-        \end{center}
-            \vspace{\onelineskip}
-
-        \assinatura{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadorcentro \\  \imprimirorientadories}
-        %\assinatura{\imprimircoorientador\ \artigocoorientadorcomparenteses \\ \imprimircoorientadorcentro\\ \imprimircoorientadories}
-        \assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoiscentro \\ \imprimirmembrodabancadoisies}
+        \assinatura{\imprimirautor\\ \textbf{Estagiário}}
+        \assinatura{\imprimirsupervisor \\ \textbf{Supervisor}}
+        \assinatura{\imprimirorientador\\ \textbf{Professor Orientador}}
+        
         \pagebreak
     \end{folhadeaprovacao}
 }
